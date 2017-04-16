@@ -1,26 +1,193 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="i5z-L0-waG">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="eXt-ai-H9t">
+            <objects>
+                <navigationController id="i5z-L0-waG" sceneMemberID="viewController">
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ptn-aZ-X8d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="d5k-P5-eYv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E9T-J4-ouF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-636" y="113"/>
+        </scene>
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="DCHomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="orU-MT-uLM">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PSk-cr-7wr">
+                                    <size key="itemSize" width="320" height="273"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collection_cell" id="aQS-zv-Kgk" customClass="DCHomeCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="273"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="273"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GcS-Ke-jDi">
+                                                    <rect key="frame" x="8" y="8" width="148" height="148"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="148" id="QgB-sF-rjD" customClass="DCLayoutConstraint"/>
+                                                        <constraint firstAttribute="height" constant="148" id="VUn-Xi-Jvc" customClass="DCLayoutConstraint"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LnB-lq-FXJ">
+                                                    <rect key="frame" x="164" y="8" width="148" height="148"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="148" id="DzY-U2-gQP" customClass="DCLayoutConstraint"/>
+                                                        <constraint firstAttribute="width" constant="148" id="tqc-av-8IX" customClass="DCLayoutConstraint"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdO-kE-adq" customClass="DCButton">
+                                                    <rect key="frame" x="8" y="8" width="148" height="148"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="148" id="1nw-kC-YaA" customClass="DCLayoutConstraint"/>
+                                                        <constraint firstAttribute="height" constant="148" id="Q7h-1X-BQw" customClass="DCLayoutConstraint"/>
+                                                    </constraints>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sP-DB-EuS" customClass="DCButton">
+                                                    <rect key="frame" x="164" y="8" width="148" height="148"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="148" id="qoN-yJ-Fbb" customClass="DCLayoutConstraint"/>
+                                                        <constraint firstAttribute="width" constant="148" id="ziH-Jg-8tG" customClass="DCLayoutConstraint"/>
+                                                    </constraints>
+                                                </button>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHn-F2-Gwt">
+                                                    <rect key="frame" x="8" y="164" width="304" height="109"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubh-pd-7Pv" customClass="DCLabel">
+                                                            <rect key="frame" x="8" y="8" width="37" height="18"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="18" id="0Ig-Rc-nkK" customClass="DCLayoutConstraint"/>
+                                                                <constraint firstAttribute="width" constant="37" id="u7w-sc-b60" customClass="DCLayoutConstraint"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item_id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xoi-YM-bMs" customClass="DCLabel">
+                                                            <rect key="frame" x="8" y="63" width="62" height="18"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="62" id="myV-IC-s6a" customClass="DCLayoutConstraint"/>
+                                                                <constraint firstAttribute="height" constant="18" id="pl3-HY-baV" customClass="DCLayoutConstraint"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggx-BF-PSf" customClass="DCLabel">
+                                                            <rect key="frame" x="8" y="27" width="288" height="31"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="288" id="1rH-kY-nd4" customClass="DCLayoutConstraint"/>
+                                                                <constraint firstAttribute="height" constant="31" id="TUl-rm-EB2" customClass="DCLayoutConstraint"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXe-PJ-pwy" customClass="DCLabel">
+                                                            <rect key="frame" x="8" y="85" width="288" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="21" id="HC2-oG-bo8" customClass="DCLayoutConstraint"/>
+                                                                <constraint firstAttribute="width" constant="288" id="y49-bi-7LS" customClass="DCLayoutConstraint"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="ggx-BF-PSf" firstAttribute="leading" secondItem="cHn-F2-Gwt" secondAttribute="leading" constant="8" id="28R-yR-b83" customClass="DCLayoutConstraint"/>
+                                                        <constraint firstItem="ubh-pd-7Pv" firstAttribute="top" secondItem="cHn-F2-Gwt" secondAttribute="top" constant="8" id="91k-gm-H5G" customClass="DCLayoutConstraint"/>
+                                                        <constraint firstItem="ubh-pd-7Pv" firstAttribute="leading" secondItem="cHn-F2-Gwt" secondAttribute="leading" constant="8" id="Jic-8l-uBZ" customClass="DCLayoutConstraint"/>
+                                                        <constraint firstItem="Xoi-YM-bMs" firstAttribute="top" secondItem="ggx-BF-PSf" secondAttribute="bottom" constant="5" id="RwR-02-g6u" customClass="DCLayoutConstraint"/>
+                                                        <constraint firstItem="LXe-PJ-pwy" firstAttribute="top" secondItem="Xoi-YM-bMs" secondAttribute="bottom" constant="4" id="YPo-a9-hUQ" customClass="DCLayoutConstraint"/>
+                                                        <constraint firstItem="LXe-PJ-pwy" firstAttribute="leading" secondItem="cHn-F2-Gwt" secondAttribute="leading" constant="8" id="dNC-lf-JUj" customClass="DCLayoutConstraint"/>
+                                                        <constraint firstItem="Xoi-YM-bMs" firstAttribute="leading" secondItem="cHn-F2-Gwt" secondAttribute="leading" constant="8" id="m1m-3F-frp" customClass="DCLayoutConstraint"/>
+                                                        <constraint firstItem="ggx-BF-PSf" firstAttribute="top" secondItem="ubh-pd-7Pv" secondAttribute="bottom" constant="1" id="vSu-QA-1mD" customClass="DCLayoutConstraint"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="cdO-kE-adq" firstAttribute="leading" secondItem="aQS-zv-Kgk" secondAttribute="leading" constant="8" id="5Pv-x9-CiA" customClass="DCLayoutConstraint"/>
+                                            <constraint firstAttribute="bottom" secondItem="cHn-F2-Gwt" secondAttribute="bottom" id="BrY-42-Iqw" customClass="DCLayoutConstraint"/>
+                                            <constraint firstItem="cHn-F2-Gwt" firstAttribute="top" secondItem="6sP-DB-EuS" secondAttribute="bottom" constant="8" id="C5D-iE-beh" customClass="DCLayoutConstraint"/>
+                                            <constraint firstAttribute="trailing" secondItem="cHn-F2-Gwt" secondAttribute="trailing" constant="8" id="IFW-LE-6pi" customClass="DCLayoutConstraint"/>
+                                            <constraint firstAttribute="trailing" secondItem="LnB-lq-FXJ" secondAttribute="trailing" constant="8" id="N9i-vx-svg" customClass="DCLayoutConstraint"/>
+                                            <constraint firstItem="GcS-Ke-jDi" firstAttribute="leading" secondItem="aQS-zv-Kgk" secondAttribute="leading" constant="8" id="NZz-Ai-Nrf" customClass="DCLayoutConstraint"/>
+                                            <constraint firstItem="6sP-DB-EuS" firstAttribute="top" secondItem="aQS-zv-Kgk" secondAttribute="top" constant="8" id="O2L-XG-anl" customClass="DCLayoutConstraint"/>
+                                            <constraint firstAttribute="trailing" secondItem="6sP-DB-EuS" secondAttribute="trailing" constant="8" id="WQ2-Xs-crY" customClass="DCLayoutConstraint"/>
+                                            <constraint firstItem="cHn-F2-Gwt" firstAttribute="leading" secondItem="aQS-zv-Kgk" secondAttribute="leading" constant="8" id="s7o-jS-arg" customClass="DCLayoutConstraint"/>
+                                            <constraint firstItem="cdO-kE-adq" firstAttribute="top" secondItem="aQS-zv-Kgk" secondAttribute="top" constant="8" id="xG9-61-fNV" customClass="DCLayoutConstraint"/>
+                                            <constraint firstItem="LnB-lq-FXJ" firstAttribute="top" secondItem="aQS-zv-Kgk" secondAttribute="top" constant="8" id="yQm-VZ-2hK" customClass="DCLayoutConstraint"/>
+                                            <constraint firstItem="GcS-Ke-jDi" firstAttribute="top" secondItem="aQS-zv-Kgk" secondAttribute="top" constant="8" id="zQq-8T-ps3" customClass="DCLayoutConstraint"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="itemIdLabel" destination="LXe-PJ-pwy" id="gUr-xE-jJp"/>
+                                            <outlet property="leftButton" destination="cdO-kE-adq" id="1f1-oC-0JA"/>
+                                            <outlet property="leftImageView" destination="GcS-Ke-jDi" id="86f-eh-o78"/>
+                                            <outlet property="rightButton" destination="6sP-DB-EuS" id="qhF-Qt-byL"/>
+                                            <outlet property="rightImageView" destination="LnB-lq-FXJ" id="83c-nn-JXg"/>
+                                            <outlet property="titleLabel" destination="ggx-BF-PSf" id="czW-Av-fEw"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ZjY-Cw-2AR"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="YU1-1i-Azj"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="orU-MT-uLM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5JI-ji-Ite" customClass="DCLayoutConstraint"/>
+                            <constraint firstAttribute="trailing" secondItem="orU-MT-uLM" secondAttribute="trailing" id="BYT-Cl-ZGX" customClass="DCLayoutConstraint"/>
+                            <constraint firstItem="orU-MT-uLM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="L08-Vs-PEI" customClass="DCLayoutConstraint"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="orU-MT-uLM" secondAttribute="bottom" id="xh8-Ua-33r" customClass="DCLayoutConstraint"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="sFS-PZ-FvD"/>
+                    <connections>
+                        <outlet property="collectionView" destination="orU-MT-uLM" id="MO3-pG-zJq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="44.799999999999997" y="112.44377811094454"/>
         </scene>
     </scenes>
 </document>

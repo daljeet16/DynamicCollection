@@ -6,7 +6,10 @@ target 'DynamicCollection' do
   # use_frameworks!
 
   # Pods for DynamicCollection
-
+    pod 'AFNetworking', '~> 3.0'
+    pod 'SDWebImage', '~>3.8'
+    pod 'MBProgressHUD'
+    
   target 'DynamicCollectionTests' do
     inherit! :search_paths
     # Pods for testing
