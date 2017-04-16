@@ -94,14 +94,23 @@ long lastSelectedRow;
 
     if(lastSelectedRow != -1){
         NSDictionary *dict = _dataDictionaryArray[lastSelectedRow];
-        DCFlickrModel *flickrModel  = dict[@"0"];
-        flickrModel.selectedCheck = false;
+        DCFlickrModel *flickrModel;
         flickrModel  = dict[@"1"];
         flickrModel.selectedCheck = false;
+        if(button.tag != lastSelectedRow){
+            flickrModel = dict[@"0"];
+            flickrModel.selectedCheck = false;
+        }
     }
-     NSDictionary *dict = _dataDictionaryArray[button.tag];
+    
+    NSDictionary *dict = _dataDictionaryArray[button.tag];
     DCFlickrModel *flickrModel  = dict[@"0"];
+    if(flickrModel.selectedCheck){
+    flickrModel.selectedCheck = false;
+    }
+    else{
     flickrModel.selectedCheck = true;
+    }
     lastSelectedRow = button.tag;
     [_collectionView reloadData];
 
@@ -112,15 +121,22 @@ long lastSelectedRow;
    
     if(lastSelectedRow != -1){
         NSDictionary *dict = _dataDictionaryArray[lastSelectedRow];
-        DCFlickrModel *flickrModel  = dict[@"1"];
-        flickrModel.selectedCheck = false;
+        DCFlickrModel *flickrModel;
         flickrModel  = dict[@"0"];
         flickrModel.selectedCheck = false;
+        if(button.tag != lastSelectedRow){
+        flickrModel = dict[@"1"];
+        flickrModel.selectedCheck = false;
+        }
     }
     NSDictionary *dict = _dataDictionaryArray[button.tag];
     DCFlickrModel *flickrModel  = dict[@"1"];
-    flickrModel.selectedCheck = true;
-    lastSelectedRow = button.tag;
+    if(flickrModel.selectedCheck){
+        flickrModel.selectedCheck = false;
+    }
+    else{
+        flickrModel.selectedCheck = true;
+    }    lastSelectedRow = button.tag;
     [_collectionView reloadData];
     
 }
