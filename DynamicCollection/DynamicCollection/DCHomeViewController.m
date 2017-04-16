@@ -139,6 +139,19 @@ long lastSelectedRow;
        }
    } failure:^(NSError *error) {
        [MBProgressHUD hideHUDForView:self.view animated:YES];
+       UIAlertController * alert = [UIAlertController
+                                    alertControllerWithTitle:@"Message"
+                                    message:[NSString stringWithFormat:@"%@",error]
+                                    preferredStyle:UIAlertControllerStyleAlert];
+       UIAlertAction* yesButton = [UIAlertAction
+                                   actionWithTitle:@"Ok"
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction * action) {
+                                       //Handle your yes please button action here
+                                   }];
+       [alert addAction:yesButton];
+       [self presentViewController:alert animated:YES completion:nil];
+
    }];
 }
 
